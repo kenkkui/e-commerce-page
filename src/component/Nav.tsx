@@ -1,7 +1,7 @@
 import * as React from "react";
-import profile from "./images/image-avatar.png";
-import logo from "./images/logo.svg";
-import cart from "./images/icon-cart.svg";
+import profile from "../images/image-avatar.png";
+import logo from "../images/logo.svg";
+import cart from "../images/icon-cart.svg";
 import RenderImage from "./RenderImage";
 
 const LINKS: string[] = ["Collection", "Men", "Women", "About", "Contact"];
