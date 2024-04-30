@@ -9,9 +9,13 @@ const iconCartBtn = (
   </svg>
 );
 
-function AddCart() {
+interface AddCartProp {
+  onClick: () => void;
+}
+
+function AddCart({ onClick }: AddCartProp) {
   return (
-    <button className="add-to-cart">
+    <button className="add-to-cart" onClick={onClick}>
       {iconCartBtn}
       <p>Add to Cart</p>
     </button>

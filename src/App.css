@@ -44,35 +44,6 @@ a {
   flex-direction: column;
 }
 
-nav {
-  width: 100%;
-  padding: 40px 0;
-
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--grayish-blue);
-}
-
-.nav-btns,
-.nav-aside {
-  display: flex;
-  align-items: center;
-  gap: 50px;
-}
-
-.btn-wrapper {
-  display: flex;
-  gap: 30px;
-}
-
-.btn-wrapper a {
-  color: var(--dark-grayish-blue);
-}
-
-.profile img {
-  height: 45px;
-}
-
 .sneaker-page {
   padding: 90px 60px 0 60px;
   flex: 1;
