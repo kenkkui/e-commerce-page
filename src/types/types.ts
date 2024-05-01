@@ -1,7 +1,7 @@
 // For universal types
-export interface CartQuantity {
+export interface CartFunctions {
   addItemCart: () => void;
-  removeItemCart: () => void; 
+  removeItemCart: () => void;
 }
 
 export interface cartContent {

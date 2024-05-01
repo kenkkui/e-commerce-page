@@ -3,16 +3,24 @@ import SneakerDescription from "./SneakerDescription";
 import Quantity from "./Quantity";
 import AddCart from "./AddCartBtn";
 
-import { CartQuantity } from "../types/types";
+import { CartFunctions } from "../types/types";
 
-function SneakerInfo({ addItemCart, removeItemCart }: CartQuantity) {
+function SneakerInfo({
+  addItemCart,
+  removeItemCart,
+  cart,
+}: CartFunctions & { cart: number }) {
   return (
     <section className="sneaker-info-wrapper">
       <main className="sneaker-info">
         <SneakerDescription />
 
         <section className="add-cart-container">
-          <Quantity addItemCart={addItemCart} removeItemCart={removeItemCart} />
+          <Quantity
+            addItemCart={addItemCart}
+            removeItemCart={removeItemCart}
+            cart={cart}
+          />
           <AddCart onClick={addItemCart} />
         </section>
       </main>

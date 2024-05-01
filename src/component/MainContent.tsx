@@ -2,9 +2,13 @@ import * as React from "react";
 import SneakerPreview from "./SneakerPreview";
 import SneakerInfo from "./SneakerInfo";
 
-import { CartQuantity } from "../types/types";
+import { CartFunctions } from "../types/types";
 
-function MainContent({ addItemCart, removeItemCart }: CartQuantity) {
+function MainContent({
+  addItemCart,
+  removeItemCart,
+  cart,
+}: CartFunctions & { cart: number }) {
   return (
     <section className="sneaker-page">
       <main className="sneaker-content">
@@ -12,6 +16,7 @@ function MainContent({ addItemCart, removeItemCart }: CartQuantity) {
         <SneakerInfo
           addItemCart={addItemCart}
           removeItemCart={removeItemCart}
+          cart={cart}
         />
       </main>
     </section>

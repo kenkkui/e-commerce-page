@@ -1,5 +1,6 @@
 import * as React from "react";
 import { cartContent } from "../../types/types";
+import thumbnailImage from "../../images/image-product-1-thumbnail.jpg";
 
 interface ShoppingCartContentProps {
   isHover: boolean;
@@ -10,6 +11,22 @@ function ShoppingCartContent({
   cart,
   removeAll,
 }: ShoppingCartContentProps & cartContent) {
+  const item = (
+    <>
+      <div className="item-in-cart">
+        <img src={thumbnailImage} alt="Thumbnail" />
+        <div className="text-container">
+          <h3>Fall Limited Edition Sneakers</h3>
+          <p>
+            $125.00 x {cart}{" "}
+            <span className="cart-total-price">${cart * 125}.00</span>
+          </p>
+        </div>
+      </div>
+      <button id="checkout"></button>
+    </>
+  );
+
   return (
     <section className={`shopping-cart-content ${isHover ? "is-hover" : ""}`}>
       <div>

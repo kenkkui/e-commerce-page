@@ -75,3 +75,9 @@ nav {
   font-weight: 700;
   color: var(--dark-grayish-blue);
 }
+
+.item-in-cart {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}

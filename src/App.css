@@ -160,9 +160,10 @@ main.sneaker-info header {
 
 .quantity-container {
   height: 50px;
+  width: 160px;
   display: flex;
   align-items: center;
-  gap: 40px;
+  justify-content: space-between;
   padding: 0 15px;
   border-radius: 10px;
   background: var(--light-grayish-blue);

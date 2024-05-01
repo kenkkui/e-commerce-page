@@ -33,6 +33,7 @@ function App() {
         <MainContent
           addItemCart={() => itemCart(1)}
           removeItemCart={() => itemCart(-1)}
+          cart={cart}
         />
       </main>
     </div>
