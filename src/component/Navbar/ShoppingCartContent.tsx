@@ -6,50 +6,64 @@ import iconClear from "../../images/icon-delete.svg";
 
 interface ShoppingCartContentProps {
   isHover: boolean;
+  setCartOnHover: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 function ShoppingCartContent({
   isHover,
+  setCartOnHover,
   cart,
-  removeAll,
+  setCart,
 }: ShoppingCartContentProps & cartContent) {
-  const item = (
-    <div className="item-in-cart-wrapper">
-      <div className="item-in-cart">
-        <RenderImage
-          src={thumbnailImage}
-          name="thumbnail-image"
-          alt="Thumbnail"
-        />
-        <div className="text-container">
-          <h3>Fall Limited Edition Sneakers</h3>
-          <p>
-            $125.00 x {cart}
-            <p className="cart-total-price">${cart * 125}.00</p>
-          </p>
-        </div>
+  function handleMouseOver() {
+    if (isHover) {
+      setCartOnHover(true);
+    }
+  }
 
-        <button className="clear-cart" onClick={removeAll}>
-          <img src={iconClear} alt="Clear" />
-        </button>
-      </div>
-
-      <button id="checkout">Checkout</button>
-    </div>
-  );
+  function handleMouseOut() {
+    setCartOnHover(false);
+  }
 
   return (
-    <section className={`shopping-cart-content ${isHover ? "is-hover" : ""}`}>
-      <div>
-        <h1>Cart</h1>
-      </div>
+    <section
+      className={`shopping-cart-container ${isHover ? "is-hover" : ""}`}
+      onMouseOver={handleMouseOver}
+      onMouseOut={handleMouseOut}
+    >
+      <div className="shopping-cart-content">
+        <div>
+          <h1>Cart</h1>
+        </div>
 
-      <div className="content">
-        {cart > 0 ? (
-          item
-        ) : (
-          <p className="cart-empty-msg">Your cart is empty.</p>
-        )}
+        <div className="content">
+          {cart > 0 ? (
+            <div className="item-in-cart-wrapper">
+              <div className="item-in-cart">
+                <RenderImage
+                  src={thumbnailImage}
+                  name="thumbnail-image"
+                  alt="Thumbnail"
+                />
+                <div className="text-container">
+                  <h3>Fall Limited Edition Sneakers</h3>
+                  <p>
+                    $125.00 x {cart}
+                    <p className="cart-total-price">${cart * 125}.00</p>
+                  </p>
+                </div>
+
+                <button className="clear-cart" onClick={() => setCart(0)}>
+                  <img src={iconClear} alt="Clear" />
+                </button>
+              </div>
+
+              <button id="checkout">Checkout</button>
+            </div>
+          ) : (
+            <p className="cart-empty-msg">Your cart is empty.</p>
+          )}
+        </div>
       </div>
     </section>
   );

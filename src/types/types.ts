@@ -5,6 +5,6 @@ export interface CartFunctions {
 }
 
 export interface cartContent {
-  removeAll: () => void;
+  setCart: React.Dispatch<React.SetStateAction<number>>;
   cart: number;
 }

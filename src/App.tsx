@@ -21,15 +21,13 @@ function App() {
       removeOne();
     } else if (value === 1) {
       addOne();
-    } else if (value === 100) {
-      setCart(0);
     }
   }
 
   return (
     <div id="app">
       <main className="main-content">
-        <Nav removeAll={() => itemCart(100)} cart={cart} />
+        <Nav setCart={setCart} cart={cart} />
         <MainContent
           addItemCart={() => itemCart(1)}
           removeItemCart={() => itemCart(-1)}
