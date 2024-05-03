@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
+import "./SneakerPreview.css";
 
 const images = [
   require("../images/image-product-1.jpg"),
