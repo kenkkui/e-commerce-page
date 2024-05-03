@@ -1,9 +1,10 @@
 nav {
   width: 100%;
-  padding: 40px 0;
+  height: 126px;
 
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border-bottom: 1px solid var(--grayish-blue);
 }
 
@@ -11,20 +12,54 @@ nav {
 .nav-aside {
   display: flex;
   align-items: center;
+  height: 100%;
   gap: 50px;
 }
 
 .btn-wrapper {
+  height: 100%;
   display: flex;
+  align-items: center;
   gap: 30px;
 }
 
-.btn-wrapper a {
+.btn-wrapper div {
   color: var(--dark-grayish-blue);
+  height: 100%;
+  position: relative;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: 0.15s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.btn-wrapper div:hover{
+  color: #000000;
+  border-bottom: 4px solid var(--orange);
+}
+
+.profile {
+  height: 45px;
+  width: 45px;
+
+  position: relative;
+  z-index: 200;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: 0.1s;
+}
+
+.profile:hover {
+  outline: 2px solid var(--orange);
 }
 
 .profile img {
-  height: 45px;
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 
 .shopping-cart-img {

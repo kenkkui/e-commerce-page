@@ -19,11 +19,7 @@ function Nav({ setCart, cart }: cartContent) {
 
         <div className="btn-wrapper">
           {LINKS.map((link, i) => {
-            return (
-              <a href="/" key={i}>
-                {link}
-              </a>
-            );
+            return <div key={i}>{link}</div>;
           })}
         </div>
       </section>
