@@ -1,6 +1,5 @@
 import * as React from "react";
 import { useState } from "react";
-import LightBox from "./LightBox";
 
 const images = [
   require("../images/image-product-1.jpg"),
@@ -10,7 +9,7 @@ const images = [
 ];
 
 interface SneakerPreviewProps {
-  setIsOpenLightBox: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsOpenLightBox?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 function SneakerPreview({ setIsOpenLightBox }: SneakerPreviewProps) {
@@ -18,7 +17,10 @@ function SneakerPreview({ setIsOpenLightBox }: SneakerPreviewProps) {
 
   return (
     <section className="sneaker-preview-wrapper">
-      <main className="sneaker-preview" onClick={() => setIsOpenLightBox(true)}>
+      <main
+        className="sneaker-preview"
+        onClick={() => setIsOpenLightBox?.(true)}
+      >
         <img src={images[currentImage]} alt="Fall Limited Edition Sneakers" />
       </main>
 

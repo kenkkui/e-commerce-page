@@ -263,3 +263,19 @@ main.sneaker-info header {
   align-items: center;
   justify-content: center;
 }
+
+.box {
+  position: relative;
+}
+
+.icon-close {
+  cursor: pointer;
+  position: absolute;
+  top: -25px;
+  right: 0;
+  fill: #69707D;
+}
+
+.icon-close:hover {
+  fill: var(--orange);
+}
