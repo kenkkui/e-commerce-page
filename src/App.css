@@ -11,7 +11,6 @@
   --grayish-blue: hsl(220, 14%, 75%);
   --light-grayish-blue: hsl(223, 64%, 98%);
   --white: hsl(0, 0%, 100%);
-  --lightbox-black-75: hsl(0, 0%, 0%);
 }
 
 *,
@@ -58,7 +57,6 @@ a {
 
 .sneaker-preview-wrapper {
   width: 425px;
-  /* background-color: red; */
 
   display: flex;
   flex-direction: column;
@@ -68,21 +66,46 @@ a {
 main.sneaker-preview {
   width: 100%;
   aspect-ratio: 1 / 1 ;
-  border: 1px solid black;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+main.sneaker-preview img,
+.aside-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+main.sneaker-preview img {
   border-radius: 30px;
 }
 
 aside.sneaker-preview {
   width: 100%;
   display: flex;
-  gap: 25px;
+  gap: 20px;
 }
 
-aside.sneaker-preview .aside-preview {
-  flex: 1;
-  aspect-ratio: 1 / 1;
-  border: 1px solid black;
+.aside-preview {
   border-radius: 12px;
+  cursor: pointer;
+}
+
+.aside-preview img {
+  border-radius: 10px;
+}
+
+.aside-preview:hover {
+  opacity: 0.5;
+}
+
+.aside-preview.active-image {
+  border: 2px solid var(--orange);
+}
+
+.aside-preview.active-image img {
+  opacity: 0.3;
 }
 
 .sneaker-info-wrapper {
@@ -225,4 +248,18 @@ main.sneaker-info header {
 .add-to-cart:hover {
   opacity: 0.7;
   translate: 0 -2px;
+}
+
+.light-box {
+  position: absolute;
+  z-index: 1000;
+  inset: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.75);
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

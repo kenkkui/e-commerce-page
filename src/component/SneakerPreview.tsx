@@ -1,14 +1,40 @@
 import * as React from "react";
+import { useState } from "react";
+import LightBox from "./LightBox";
 
-function SneakerPreview() {
+const images = [
+  require("../images/image-product-1.jpg"),
+  require("../images/image-product-2.jpg"),
+  require("../images/image-product-3.jpg"),
+  require("../images/image-product-4.jpg"),
+];
+
+interface SneakerPreviewProps {
+  setIsOpenLightBox: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+function SneakerPreview({ setIsOpenLightBox }: SneakerPreviewProps) {
+  const [currentImage, setcurrentImage] = useState(0);
+
   return (
     <section className="sneaker-preview-wrapper">
-      <main className="sneaker-preview"></main>
+      <main className="sneaker-preview" onClick={() => setIsOpenLightBox(true)}>
+        <img src={images[currentImage]} alt="Fall Limited Edition Sneakers" />
+      </main>
+
       <aside className="sneaker-preview">
-        <div className="aside-preview"></div>
-        <div className="aside-preview"></div>
-        <div className="aside-preview"></div>
-        <div className="aside-preview"></div>
+        {images.map((image, i) => {
+          return (
+            <div
+              className={`aside-preview ${
+                i === currentImage ? "active-image" : ""
+              }`}
+              onClick={() => setcurrentImage(i)}
+            >
+              <img key={i} src={image} alt="Product" />
+            </div>
+          );
+        })}
       </aside>
     </section>
   );
