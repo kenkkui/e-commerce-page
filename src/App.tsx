@@ -4,6 +4,7 @@ import Nav from "./component/Navbar/Nav";
 import MainContent from "./component/MainContent";
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [cart, setCart] = useState(0);
 
   function itemCart(value: number) {

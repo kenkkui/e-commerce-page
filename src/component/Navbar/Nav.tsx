@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import RenderImage from "../RenderImage";
 import logo from "../../images/logo.svg";
-import cartIcon from "../../images/icon-cart.svg";
 import profile from "../../images/image-avatar.png";
 import ShoppingCartContent from "./ShoppingCartContent";
+import iconMenu from "../../images/icon-menu.svg";
 import { cartContent } from "../../types/types";
 import "./Nav.css";
 
@@ -15,6 +15,10 @@ function Nav({ setCart, cart }: cartContent) {
   return (
     <nav>
       <section className="nav-btns">
+        <div className="menu-icon">
+          <img src={iconMenu} alt="Menu" />
+        </div>
+
         <RenderImage src={logo} name="logo" alt="Sneakers" />
 
         <div className="btn-wrapper">
