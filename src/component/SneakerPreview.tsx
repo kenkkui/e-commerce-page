@@ -1,6 +1,8 @@
 import * as React from "react";
 import { useState } from "react";
 import "./SneakerPreview.css";
+import NextBtn from "./NextBtn";
+import PrevBtn from "./PrevBtn";
 
 const images = [
   require("../images/image-product-1.jpg"),
@@ -23,6 +25,12 @@ function SneakerPreview({ setIsOpenLightBox }: SneakerPreviewProps) {
         onClick={() => setIsOpenLightBox?.(true)}
       >
         <img src={images[currentImage]} alt="Fall Limited Edition Sneakers" />
+      </main>
+
+      <main className="mobile-sneaker-preview">
+        <NextBtn setCurrentImage={setcurrentImage} addClass="mobile" />
+        <img src={images[currentImage]} alt="Fall Limited Edition Sneakers" />
+        <PrevBtn setCurrentImage={setcurrentImage} addClass="mobile" />
       </main>
 
       <aside className="sneaker-preview">

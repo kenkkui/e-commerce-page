@@ -1,18 +1,21 @@
 import * as React from "react";
-import { useState } from "react";
 import SneakerPreview from "./SneakerPreview";
 import SneakerInfo from "./SneakerInfo";
 import LightBox from "./LightBox";
 
 import { CartFunctions } from "../types/types";
 
+interface MainContentProps {
+  cart: number;
+  setIsOpenLightBox: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
 function MainContent({
   addItemCart,
   removeItemCart,
   cart,
-}: CartFunctions & { cart: number }) {
-  const [isOpenLightBox, setIsOpenLightBox] = useState(false);
-
+  setIsOpenLightBox,
+}: CartFunctions & MainContentProps) {
   return (
     <>
       <section className="sneaker-page">
@@ -25,8 +28,6 @@ function MainContent({
           />
         </main>
       </section>
-
-      {isOpenLightBox && <LightBox setIsOpenLightBox={setIsOpenLightBox} />}
     </>
   );
 }

@@ -4,18 +4,22 @@ import logo from "../../images/logo.svg";
 import profile from "../../images/image-avatar.png";
 import ShoppingCartContent from "./ShoppingCartContent";
 import iconMenu from "../../images/icon-menu.svg";
-import { cartContent } from "../../types/types";
+import { CartContent } from "../../types/types";
 import "./Nav.css";
 
 const LINKS: string[] = ["Collection", "Men", "Women", "About", "Contact"];
 
-function Nav({ setCart, cart }: cartContent) {
+interface NavProps {
+  setIsOpenMenu: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+function Nav({ setCart, cart, setIsOpenMenu }: CartContent & NavProps) {
   const [cartOnHover, setCartOnHover] = useState(false);
 
   return (
     <nav>
       <section className="nav-btns">
-        <div className="menu-icon">
+        <div className="menu-icon" onClick={() => setIsOpenMenu(true)}>
           <img src={iconMenu} alt="Menu" />
         </div>
 

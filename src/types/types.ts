@@ -4,7 +4,7 @@ export interface CartFunctions {
   removeItemCart: () => void;
 }
 
-export interface cartContent {
+export interface CartContent {
   setCart: React.Dispatch<React.SetStateAction<number>>;
   cart: number;
 }

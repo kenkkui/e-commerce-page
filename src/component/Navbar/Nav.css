@@ -282,3 +282,15 @@ button#checkout {
     scale: none ;
   }
 }
+
+@media (max-width:375px) {
+  .nav-aside {
+    gap: 20px;
+  }
+}
+
+@media (max-width:320px) {
+  nav {
+    padding: 15px;
+  }
+}

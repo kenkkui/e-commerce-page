@@ -1,5 +1,5 @@
 import * as React from "react";
-import { cartContent } from "../../types/types";
+import { CartContent } from "../../types/types";
 import thumbnailImage from "../../images/image-product-1-thumbnail.jpg";
 import RenderImage from "../RenderImage";
 import iconClear from "../../images/icon-delete.svg";
@@ -14,7 +14,7 @@ function ShoppingCartContent({
   setCartOnHover,
   cart,
   setCart,
-}: ShoppingCartContentProps & cartContent) {
+}: ShoppingCartContentProps & CartContent) {
   function handleMouseOver() {
     if (isHover) {
       setCartOnHover(true);

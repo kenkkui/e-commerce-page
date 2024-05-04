@@ -7,14 +7,17 @@
   gap: 25px;
 }
 
-main.sneaker-preview {
+main.sneaker-preview,
+main.mobile-sneaker-preview {
   width: 100%;
   aspect-ratio: 1 / 1 ;
   border-radius: 30px;
   cursor: pointer;
+  position: relative;
 }
 
 main.sneaker-preview img,
+main.mobile-sneaker-preview img,
 .aside-preview img {
   display: block;
   width: 100%;
@@ -166,23 +169,23 @@ aside.sneaker-preview {
   stroke: #1D2026;
 }
 
-.scroll-btn[data-next-btn] {
+.scroll-btn[data-next-btn="true"] {
   top: 50%;
   right: -25px;
   translate: 0 -50%;
 }
 
-.scroll-btn[data-prev-btn] {
+.scroll-btn[data-prev-btn="true"] {
   top: 50%;
   left: -25px;
   translate: 0 -50%;
 }
 
-.scroll-btn[data-next-btn] svg {
+.scroll-btn[data-next-btn="true"] svg {
   translate: 1px;
 }
 
-.scroll-btn[data-prev-btn] svg {
+.scroll-btn[data-prev-btn="true"] svg {
   translate: -1px;
 }
 
@@ -192,6 +195,22 @@ aside.sneaker-preview {
 
 .scroll-btn:hover svg {
   stroke: var(--orange);
+}
+
+.scroll-btn.mobile[data-prev-btn="true"] {
+  top: 50%;
+  left: 15px;
+  translate: 0 -50%;
+}
+
+.scroll-btn.mobile[data-next-btn="true"] {
+  top: 50%;
+  right: 15px;
+  translate: 0 -50%;
+}
+
+main.mobile-sneaker-preview {
+  display: none;
 }
 
 @media (max-width:1324px) {
@@ -217,11 +236,12 @@ aside.sneaker-preview {
   }
 
   main.sneaker-preview {
-    flex: ;
+    /* object-fit: contain;  */
+    display: none;
   }
 
-  main.sneaker-preview img {
-    object-fit: contain;
+  main.mobile-sneaker-preview {
+    display: block;
   }
 
   aside.sneaker-preview {
@@ -241,4 +261,14 @@ aside.sneaker-preview {
  main.sneaker-preview img {
   border-radius: 0;
  }
+}
+
+@media (max-width:650px) {
+  aside.sneaker-preview {
+    display: none;
+  } 
+  main.sneaker-preview img{
+    aspect-ratio: 1/ 1;
+    object-fit: cover;
+  }
 }

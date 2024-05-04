@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import * as React from "react";
+import { useState } from "react";
 import "./App.css";
 import Nav from "./component/Navbar/Nav";
 import MainContent from "./component/MainContent";
+import Menu from "./component/Menu";
+import LightBox from "./component/LightBox";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOpenLightBox, setIsOpenLightBox] = useState(false);
+
   const [cart, setCart] = useState(0);
 
   function itemCart(value: number) {
@@ -26,12 +31,15 @@ function App() {
   }
 
   return (
-    <div id="app">
+    <div id="app" className={isMenuOpen || isOpenLightBox ? "overflow" : ""}>
       <main className="main-content">
-        <Nav setCart={setCart} cart={cart} />
+        {isMenuOpen && <Menu setIsMenuOpen={setIsMenuOpen} />}
+        {isOpenLightBox && <LightBox setIsOpenLightBox={setIsOpenLightBox} />}
+        <Nav setCart={setCart} cart={cart} setIsOpenMenu={setIsMenuOpen} />
         <MainContent
           addItemCart={() => itemCart(1)}
           removeItemCart={() => itemCart(-1)}
+          setIsOpenLightBox={setIsOpenLightBox}
           cart={cart}
         />
       </main>
