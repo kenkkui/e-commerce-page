@@ -9,7 +9,6 @@ import LightBox from "./component/LightBox";
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isOpenLightBox, setIsOpenLightBox] = useState(false);
-
   const [cart, setCart] = useState(0);
 
   function itemCart(value: number) {

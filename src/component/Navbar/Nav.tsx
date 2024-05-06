@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import * as React from "react";
+import { useState, useEffect } from "react";
 import RenderImage from "../RenderImage";
 import logo from "../../images/logo.svg";
 import profile from "../../images/image-avatar.png";
@@ -18,6 +19,14 @@ function Nav({ setCart, cart, setIsOpenMenu }: CartContent & NavProps) {
 
   return (
     <nav>
+      <ShoppingCartContent
+        setCartOnHover={setCartOnHover}
+        isHover={cartOnHover}
+        setCart={setCart}
+        cart={cart}
+        mobile
+      />
+
       <section className="nav-btns">
         <div className="menu-icon" onClick={() => setIsOpenMenu(true)}>
           <img src={iconMenu} alt="Menu" />
@@ -38,6 +47,7 @@ function Nav({ setCart, cart, setIsOpenMenu }: CartContent & NavProps) {
             className="shopping-cart-img"
             onMouseOver={() => setCartOnHover((prev) => !prev)}
             onMouseOut={() => setCartOnHover((prev) => !prev)}
+            onClick={() => setCartOnHover((prev) => !prev)}
           >
             {cart > 0 && <span>{cart}</span>}
             <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">

@@ -105,7 +105,8 @@ nav {
 }
 
 .shopping-cart-content {
-  z-index: 10;
+  position: relative;
+  z-index: 1200;
   height: 235px;
   width: 350px;
   display: flex;
@@ -262,6 +263,12 @@ button#checkout {
   .profile {
     height: 35px;
     width: 35px;
+  }
+}
+
+@media (max-width:768px) {
+  .shopping-cart-container {
+    display: none;
   }
 }
 

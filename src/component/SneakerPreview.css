@@ -199,13 +199,13 @@ aside.sneaker-preview {
 
 .scroll-btn.mobile[data-prev-btn="true"] {
   top: 50%;
-  left: 15px;
+  left: 10px;
   translate: 0 -50%;
 }
 
 .scroll-btn.mobile[data-next-btn="true"] {
   top: 50%;
-  right: 15px;
+  right: 10px;
   translate: 0 -50%;
 }
 

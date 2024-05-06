@@ -3,10 +3,12 @@ import { CartContent } from "../../types/types";
 import thumbnailImage from "../../images/image-product-1-thumbnail.jpg";
 import RenderImage from "../RenderImage";
 import iconClear from "../../images/icon-delete.svg";
+import { BooleanLiteral } from "typescript";
 
 interface ShoppingCartContentProps {
   isHover: boolean;
   setCartOnHover: React.Dispatch<React.SetStateAction<boolean>>;
+  mobile?: boolean;
 }
 
 function ShoppingCartContent({
@@ -14,6 +16,7 @@ function ShoppingCartContent({
   setCartOnHover,
   cart,
   setCart,
+  mobile,
 }: ShoppingCartContentProps & CartContent) {
   function handleMouseOver() {
     if (isHover) {
